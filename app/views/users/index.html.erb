@@ -1,0 +1,25 @@
+<style type="text/css">td{border: 1px solid #ddd;} </style>
+<h1>Users#Index</h1>
+
+<h2>- Users</h2>
+<table>
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= image_tag user.avatar.url(:thumb) if user %></td>
+    <td><%= user.name if user %></td>
+    <td><%= user.email if user %></td>
+    <td><%= user.phone if user %></td>
+    <td><%= user.address if user %></td>
+    <td><%= link_to 'Comments', user_comments_path(user.id) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h2>- Dealers</h2>

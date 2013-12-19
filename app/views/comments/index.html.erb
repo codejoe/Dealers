@@ -1,0 +1,19 @@
+<h1>Comments#index</h1>
+<p>
+  <h2>User Profile.</h2>
+  <h3>Avatar: <%= image_tag @user.avatar.url(:thumb) %> </h3>
+  <h3>Name: <%= @user.name if @user %></h3>
+</p>
+<p><%= link_to 'New Comment', new_user_comment_path %></p>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Comment</th>
+  </tr>
+  <% @user.comments.each do |comment| %>
+  <tr>
+    <td></td>
+    <td><%= comment.content if comment %></td>
+  </tr>
+  <% end %>
+</table>
