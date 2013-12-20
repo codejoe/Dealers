@@ -3,7 +3,7 @@ Dealers::Application.routes.draw do
   get "comments/new"
   root 'home#index'
 
-  devise_for :users, controllers: {registrations: "users/registrations" }
+  devise_for :users, controllers: {registrations: "users/registrations", password: "users/password" }
   #get '/users', to: 'users#index'
   resources 'users' do 
     resources 'comments'
